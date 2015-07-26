@@ -15,4 +15,4 @@ INDIE-PLEX는 인디 게임 개발자와 게이머를 위한  커뮤니티다. I
 버전관리 지침: [http://www.semver.org](http://www.semver.org)
 
 ## 피드백
-트렐로에서 관리: [INDIE-PLEX 프로토타입 개발 보드](https://trello.com/b/bpibTgC2/prototype)
+트렐로에서 관리: [INDIE-PLEX 프로토타입 개발 보드](https://trello.com/b/bpibTgC2/indie-plex)
