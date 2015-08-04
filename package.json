@@ -1,0 +1,37 @@
+{
+  "name": "indie-plex",
+  "description": "bridge for creator & gamer",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "express": "^4.13.0",
+    "jade": "^1.11.0",
+    "body-parser": "^1.13.1",
+    "morgan": "^1.6.0",
+    "mongoose": "^4.0.6",
+    "app-module-path": "^1.0.2",
+    "aws-sdk": "^2.1.36",
+    "file-stream-rotator": "0.0.6"
+  },
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m0er/indie-plex.git"
+  },
+  "author": "sungjin.kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m0er/indie-plex.git/issues"
+  },
+  "homepage": "https://github.com/m0er/indie-plex.git"
+}

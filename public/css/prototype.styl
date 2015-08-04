@@ -1,0 +1,116 @@
+@font-face
+  font-family Munro
+  font-style normal
+  src url(/public/font/Munro.ttf)
+
+@font-face
+  font-family MunroNarrow
+  font-style normal
+  src url(/public/font/MunroNarrow.ttf)
+
+@font-face
+  font-family MunroSmall
+  font-style normal
+  src url(/public/font/MunroSmall.ttf)
+
+@font-face
+  font-family PressStart2P
+  font-style normal
+  src url(/public/font/PressStart2P-Regular.ttf)
+
+@font-face
+  font-family BetterPixels
+  font-style normal
+  src url(/public/font/BetterPixels.ttf)
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+transition()
+  vendor('transition', arguments)
+
+transform()
+  vendor('transform', arguments)
+
+generate-grid-x()
+  moved = -316px
+  for x in 0..1000
+    &.right-{x}
+      transition(1s ease-out)
+      transform(translate(moved * x))
+
+generate-grid-y()
+  moved = -416px
+  for y in 0..1000
+    &.down-{y}
+      transition(1s ease-out)
+      transform(translate(0, moved * y))
+
+pixel-font()
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+
+html, body
+  height 100%
+
+body
+  overflow hidden
+
+.navbar
+  z-index 10 !important
+  margin-bottom 0 !important
+  font-family Munro, sans-serif
+  pixel-font()
+  .navbar-brand
+    font-size 30px
+  .navbar-right
+    margin-right 15px
+    .focus
+      outline 1px solid #269abc
+
+#container
+  overflow hidden
+  transition(1s ease-out)
+  transform(translate(0, 0))
+  generate-grid-y()
+
+.main-background
+  z-index -1
+  position absolute
+  left 0px
+  top 0px
+  width 2227px
+  height 2080px
+  opacity 0.6
+
+.item-container
+  z-index 2
+  width 2212px
+  height 416px
+  transition(1s ease-out)
+  transform(translate(0))
+  .item
+    z-index 9
+    float left
+    width 300px
+    height 400px
+    background-color #f7ecb5
+    margin 8px
+    padding 0 10px
+    overflow hidden
+    font-size 16px
+    font-family Munro, sans-serif
+    pixel-font()
+    &.focus
+      outline 4px solid #269abc
+  generate-grid-x()
