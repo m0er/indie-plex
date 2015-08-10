@@ -1,0 +1,24 @@
+{
+  "name": "indie-plex",
+  "version": "0.0.0",
+  "homepage": "https://github.com/m0er/indie-plex",
+  "authors": [
+    "sungjin.qim@gmail.com"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "mousetrap": "~1.5.3",
+    "holderjs": "~2.8.1"
+  }
+}

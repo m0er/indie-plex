@@ -8,13 +8,14 @@
   },
   "dependencies": {
     "express": "^4.13.0",
-    "jade": "^1.11.0",
     "body-parser": "^1.13.1",
     "morgan": "^1.6.0",
     "mongoose": "^4.0.6",
     "app-module-path": "^1.0.2",
     "aws-sdk": "^2.1.36",
-    "file-stream-rotator": "0.0.6"
+    "file-stream-rotator": "0.0.6",
+    "swig": "^1.4.2",
+    "consolidate": "^0.13.1"
   },
   "main": "app.js",
   "directories": {

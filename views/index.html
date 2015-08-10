@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<link href="/resources/css/prototype.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+<div id="wrapper">
+    <img src="http://cdn.superbwallpapers.com/wallpapers/games/fez-17300-1366x768.jpg" style="width:100%;height:100%;position:absolute;"/>
+    <nav class="navbar navbar-inverse">
+        <a class="navbar-brand" href="#">{{service_title}}</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/register">회원가입</a></li>
+            <li><a href="/login">로그인</a></li>
+        </ul>
+    </nav>
+
+    <div id="container" class="container-fluid">
+        {% for row in rows %}
+            {% set i = loop.first %}
+            <div data-row-index="{{loop.index}}" class="item-container">
+            {% for cols in row %}
+                {% set j = loop.first %}
+                {% if i == 1 && j == 1 %}
+                    <div data-col-index="{{loop.index}}" class="item focus">
+                        <h4>{{cols.title}}</h4>
+                        <div>{{cols.content}}</div>
+                    </div>
+                {% else %}
+                    <div data-col-index="{{loop.index}}" class="item">
+                        <h4>{{cols.title}}</h4>
+                        <div>{{cols.content}}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="modal fade" id="item-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">...</h4>
+                </div>
+                <div class="modal-body">...</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="/components/holderjs/holder.min.js"></script>
+<script src="/components/mousetrap/mousetrap.min.js"></script>
+<script src="/resources/js/prototype.js"></script>
+{% endblock %}

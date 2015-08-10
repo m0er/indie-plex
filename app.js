@@ -2,17 +2,17 @@
  * Created by todd.kim on 15-08-02.
  */
 //add express & external modules
-var express = require('express');
-var fs = require('fs');
-var path = require('path');
-var bodyParser = require('body-parser');
-var file_stream_rotator = require('file-stream-rotator');
-var morgan = require('morgan');
+var express = require('express'),
+    fs = require('fs'),
+    path = require('path'),
+    body_parser = require('body-parser'),
+    file_stream_rotator = require('file-stream-rotator'),
+    morgan = require('morgan'),
+    consolidate = require('consolidate');
 
 //add custom modules
 require('app-module-path').addPath(__dirname + '/');
 var route_index = require('controllers/index');
-var utils = require('helpers/utils');
 
 var app = express();
 var log_path = __dirname + '/logs';
@@ -29,10 +29,13 @@ var logger = morgan('combined', {
 
 //setting config
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'jade');
-app.engine('jade', require('jade').__express);
+app.set('view engine', 'html');
+app.engine('.html', consolidate.swig);
+app.use('/views', express.static(__dirname + '/views'));
+app.use('/resources', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/public'));
-app.use(bodyParser.json());
+app.use('/components', express.static(__dirname + '/public/bower_components'));
+app.use(body_parser.json());
 app.use(logger);
 
 //mapping
